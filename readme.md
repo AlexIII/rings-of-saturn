@@ -2,7 +2,7 @@
 
 # Rings of Saturn
 
-This is a compilation of knowledge on Sega Saturn System disk and the method of its replication called the 'Rings of Saturn'.
+This is a compilation of knowledge on Sega Saturn System disk and a method of its replication called the 'Rings of Saturn'.
 
 ## Table of Contents
 1. [What is the Rings of Saturn](#what-is-the-rings-of-saturn)
@@ -15,9 +15,9 @@ This is a compilation of knowledge on Sega Saturn System disk and the method of 
 
 ## Disclaimer
 
-I acquired all this information while researching online and experimenting. The results described here are not new. Here I've tried to document everything I've found purely for tinkering and historical reasons.
+I acquired this information while researching online and experimenting. The results described here are not new. I've tried to document everything I found purely for tinkering and historical reasons.
 
-Here I assume that you're already familiar with the hot swap trick and can perform it. I won't go into its details as it's extensively documented in many other sources. [Here's one as an example.](https://www.racketboy.com/retro/sega-saturn-model-2-swap-trick)
+Here I assume that you're already familiar with the hot swap trick and can perform it. I won't go into its details as it's extensively covered in many other sources. [Here's one as an example.](https://www.racketboy.com/retro/sega-saturn-model-2-swap-trick)
 
 ## What is the Rings of Saturn
 
@@ -27,13 +27,13 @@ It is by far NOT the go to method of playing Saturn games. **It is much more con
 
 ## Sega Saturn System Disc (KD01 and KD02)
 
-The System Disc was a special disk made for game developers, that allowed to disable console's copy protection and boot burned games form any CD-R. The original System Discs are still can be found, but are considered collectors items and often strike a high price.
+The System Disc was a special disk made for Saturn game developers. The disk allowed to disable console's copy protection and boot burned games form any CD-R. The original System Discs are still can be found, but are considered collectors items and often strike a high price.
 
 There's two kins of System Disc: KD01 and KD02. The former disables DRM for Sega published games (game image header = SEGA ENTERTAINMENT), the latter is for all the other games (game image header = SEGA TP).
 
-You don't need two system disks to run all games, the either one is sufficient, as the publisher id can be patched in the game's image before it's burned with the [Sega Region Patcher](https://madroms.satakore.com/).
+You don't need two system disks to run all games, the either one is sufficient, as the publisher id can be patched with [Sega Region Patcher](https://madroms.satakore.com/) before the game is burned onto a CD-R.
 
-Note, the System Disk does not disable the region lock, you still need to patch the game region in the image if doesn't match that of your console.
+Note, the System Disk does not disable the region lock, you will still need to patch the game region if doesn't match that of your console.
 
 ## System Disc operation
 
@@ -52,11 +52,11 @@ All the KD01 links I've found on the Internet are now dead.
 
 ### Booting the burned System Disk
 
-Before you start cutting things with a Dremel, first ensure that the System Disc image you've burned is working on your Saturn.
+Before you start cutting things with a dremel, first ensure that the System Disc image you've burned is working on your Saturn.
 
 It is highly recommended to use miniCD for the System Disc as it reduces amount of things you need to cut. Also, it proves to be very difficult to cut a full-sized CD-R, as the disk's reflective layer does not tolerate machining of any kind and is easily destroyed.
 
-After burning the KD02 image, try to boot the disk using hot swap method. The successful boot of System Disk can be determined by the "SEGA" startup screen with the "COMPLETED" message that appears at the screen top left corner.
+After burning the KD02 image, try to boot the disk using the hot swap method. Successful boot can be determined by the "SEGA" startup screen with the "COMPLETED" message that appears at the screen top left corner.
 
 <img width="300" src="completed.jpg" />
 
@@ -68,12 +68,12 @@ This was the crucial step in my case, as my console refused to boot the unmodifi
 
 ## Splicing the Saturn Rings
 
-For this part you'll need to destroy an original Saturn game. Try to use only shitty games that have no value or those that are not working properly due to scratches, etc. Do your best not to destroy rare artifacts. Always research if the game you want to destroy is valuable.
+For this part you'll need to destroy an original Saturn game. Try to use only shitty games that have no value or those that are not working properly due to scratches, etc. Always research if the game you want to destroy is valuable.
 
 The process is roughly as follows.
 
 1. Align the centers of the Saturn game disk and the miniCD, draw a contour of the miniCD on the game disk.
-2. Cut the game disk 3-4 mm from the drawn contour with a Dremel cutting disk bit.
+2. Cut the Saturn disk 3-4 mm from the drawn contour (inside) with a dremel cutting-disk bit.
 3. Use sanding barrel bit to smooth the edge out, make is as close to the drawn contour as possible. The resulting cutout should be ~1mm larger in radius than the miniCD.
 4. Using any other CD as a template align the cutout ring and the miniCD and loosely tape it together.
 5. Put the spliced disk on the console spindle, rotate it manually while improving alignment of the miniCD and the outer ring by reapplying the adhesive tape and shifting everything slightly.
@@ -88,7 +88,7 @@ Note 2. The absolute maximum width of the non-reflective gap between the disks i
 
 ## Making Hot Swap easier without destroying any original disks
 
-Preface. The "COMPLETED" message indicates that the DRM was disabled, however, if you don't see the message, it doesn't mean that the DRM inhibition has failed. In fact, it is not necessary to actually boot the System Disk. The magical part that disables the DRM is located in the TOC section of the System Disk that is being read BEFORE the DRM check is performed.
+Preface. The "COMPLETED" message indicates that the DRM was disabled, however, if you don't see the message, it doesn't mean that the DRM inhibition has failed. In fact, it is not necessary to actually boot the System Disk. The magical part that disables the DRM is located in the TOC section of the System Disk, which is being read BEFORE the DRM check is performed.
 
 Exploiting this fact makes the hot swap trick much easier, because you can get away without the need of the second swap entirely! It is a very big deal especially for the v2 consoles where the second swap is fairly hard to do due to the very small and non-deterministic time window.
 
@@ -96,7 +96,7 @@ The process is then as follows.
 1. Tape or short out the disk door switch as usual for the hot swap.
 2. Put in the burned System Disk and power on the console.
 3. Swap to the original CD for the security check as usual.
-4. After the security section has been read, instead of swapping back to the System Disk, **restore disk door switch normal operation**, remove the disk from the console and hit the reset button.
+4. After the security section has been read, instead of swapping back to the System Disk, **restore the door switch normal operation**, remove the disk from the console and hit the reset button.
 5. The system is now ready to boot any burned game. Put the disk in, close the lid and it will work. You can also change the games and reset the system freely. The System Disk swap trick needs to be repeated only when you power off the console.
 
 ## Related interesting info
