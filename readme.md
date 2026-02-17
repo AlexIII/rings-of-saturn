@@ -50,6 +50,14 @@ Note, the System Disc does not disable the region lock, so you will still need t
 The KD02 image is [available at archive.org](https://archive.org/download/redump.ss.revival).
 All the KD01 links I've found on the Internet are now dead. It is unknown to me if the KD01 images still exist in public access.
 
+#### Update on KD01
+
+Thanks to [BlackGriever](https://github.com/BlackGriever) for reporting that KD02 can be patched to KD01 by replacing
+- ASCII "TP " to "ENT" at address offset 0x15;
+- ASCII "2" to "1" at address offset 0x74;
+
+See the original [issue](https://github.com/AlexIII/rings-of-saturn/issues/2) for more info.
+
 ### Booting the burned System Disc
 
 Before you start cutting things with a dremel, first ensure that the System Disc image you've burned is working on your Saturn.
